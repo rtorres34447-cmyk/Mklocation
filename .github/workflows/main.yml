@@ -5,7 +5,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'Mklocation-Android-Project-v3.zip'
+      - 'Mklocation-Android-Project-v4.zip'
       - '.github/workflows/main.yml'
 
 jobs:
@@ -19,8 +19,8 @@ jobs:
       - name: Extract Android project
         run: |
           mkdir -p "$RUNNER_TEMP/mklocation"
-          test -f Mklocation-Android-Project-v3.zip || { echo "Missing Mklocation-Android-Project-v3.zip in repo root"; exit 1; }
-          unzip -q Mklocation-Android-Project-v3.zip -d "$RUNNER_TEMP/mklocation"
+          test -f Mklocation-Android-Project-v4.zip || { echo "Missing Mklocation-Android-Project-v4.zip in repo root"; exit 1; }
+          unzip -q Mklocation-Android-Project-v4.zip -d "$RUNNER_TEMP/mklocation"
           test -f "$RUNNER_TEMP/mklocation/settings.gradle"
           echo "PROJECT_DIR=$RUNNER_TEMP/mklocation" >> "$GITHUB_ENV"
       - name: Set up Java 17
